@@ -186,7 +186,7 @@
 
                   <hr class="my-4 hr-blue">
 
-                <input type="submit" class="btn btn-warning float-end submit-buying" value=" {{__('Confirmation')}} ">
+                <input type="submit" class="btn btn-warning float-end submit-buying" value="طباعة الفاتوره للدفع">
 
         </div>
        </form>
