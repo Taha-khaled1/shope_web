@@ -174,11 +174,11 @@
                 @error('payment_method')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
-                    <input name="payment_method" class="form-check-input" type="radio" checked value="cash" id="buy-cash" >
-                    <label class="form-check-label" for="buy-cash">
+                    <input name="payment_method" class="form-check-input" type="radio" checked value="cash" id="buy-cash" hidden>
+                    {{-- <label class="form-check-label" for="buy-cash">
                         <img src="{{asset('images/cach.png')}}" width="auto" height="20px" alt="buy cash">
                              {{__('Cash on delivery')}}
-                    </label>
+                    </label> --}}
                   </div>
                   
                   <input type="text" value="@if(isset($rate)) {{$cart->total() - ($cart->total() * $rate) + 8}} @else  {{$cart->total() + 8}}  @endif" name="total" style="display:none" >

@@ -35,6 +35,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+
 Route::get('/print{id}', function($id) {
     $order = Order::find($id);
     $address = OrderAddress::where('order_id', $order->id )->first();

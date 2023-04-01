@@ -145,27 +145,27 @@
         <table>
             <tr>
                 <th>غرض</th>
-                <th>سعر</th>
-                <th>كمية</th>
+                <th>سعر</th>   
+                <th>الخصم</th>
                 <th>المجموع الفرعي</th>
             </tr>
             <tr>
-                <td>جزئي</td>
-                <td>AED 50.00</td>
-                <td>1</td>
-                <td>AED 50.00</td>
+                <td>الشحن</td>
+                <td>AED 8</td>
+                <td>AED 0</td>
+                <td>AED 8</td>
             </tr>
             <tr>
-                <td>المجموع الكلي </td>
-                <td>AED 100.00</td>
-                <td>1</td>
-                <td>AED 100.00</td>
+                <td>المجموع الكلي لجميع المنتجات </td>
+                <td>AED {{$var1}}</td>     
+                <td>AED {{$var3}}</td>         
+                <td>AED {{$var1}}</td>
             </tr>
             <tr class="total">
                 <td></td>
                 <td></td>
-                <td>المجموع:</td>
-                <td>AED 150.00</td>
+                <td>المجموع النهائي : </td>
+                <td>AED {{$var1 + 8}}</td>
             </tr>
         </table>
         <div class="payment-method">
@@ -177,6 +177,25 @@
             </h2>
             <p>رقم الحساب: 28170386</p>
             <p>رقم الآيبان: AE290500000000028170386</p>
+        </div>
+
+
+        <div class="bank-details">
+            <h2>
+              ملاحظة: الدفع سيكون عن طريق التحويل للحساب البنكي المرفق، والمعلومات موجودة في الأعلى. بعد الدفع، يرجى التواصل عن طريق الواتساب، وتوفير معلومات الدفع ورقم الفاتورة.
+              رقم الواتساب: 971565654282
+            </h2>
+          </div>
+          
+
+
+
+
+
+        <div class="header-logo-area">
+          
+            <img class="logo-main" src="{{asset('logo.png')}}" width="170px" height="170px" alt="Logo" />
+         
         </div>
     </div>
 

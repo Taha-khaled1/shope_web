@@ -66,7 +66,7 @@ class OrderController extends Controller
 
     
     public function store(Request $request)
-    {
+    {$qu=0;
         $this->validate($request, [
             'email' => ['required'],
             'name' => ['required'],
@@ -151,7 +151,7 @@ class OrderController extends Controller
                 
                 if($request->payment_method == "check"){
                     $order= $data1;
-                    return view("Print", ['var1' => $request->total, 'var2' => $request->payment_method, 'var3' => $request->discount]);
+                    return view("Print", ['var1' => $request->total, 'var2' => $request->payment_method, 'var3' => $request->discount,'var4' => $a->quantity]);
                     // notify()->success( __('The request has been sent, please check the email for details'));
 
                     return redirect()->route('orders.payments.create', $order->id);
@@ -159,15 +159,16 @@ class OrderController extends Controller
                    
                  if(isset($user)){ 
                     event(new Registered($user));
-                    Auth::login($user);return view('print',['var1' => $request->total, 'var2' => $request->payment_method, 'var3' => $request->discount]);
+                    Auth::login($user);
+                    return view("Print",['var1' => $request->total, 'var2' => $request->payment_method, 'var3' => $request->discount,'var4' => $a->quantity]);
                     // notify()->success( __('The request has been sent, and you are logged in, please check the email for details'));
-                    return redirect(RouteServiceProvider::HOME);
+                    // return redirect(RouteServiceProvider::HOME);
                 }else{
 
-                    return view('print',['var1' => $request->total, 'var2' => $request->payment_method, 'var3' => $request->discount]);
+                    return view("Print",['var1' => $request->total, 'var2' => $request->payment_method, 'var3' => $request->discount,'var4' => $a->quantity]);
                     // notify()->success( __('The request has been sent, please check the email for details'));
                     
-                    return redirect()->route('viewHomePage');
+                    // return redirect()->route('viewHomePage');
 
 
 
@@ -186,8 +187,8 @@ class OrderController extends Controller
             return redirect()->back()->with('error', 'خطأ بالبيانات');
         }
             } catch (\Exception $e){
-                return view('print');
-                return   $e->getMessage() ;
+                return view("Print",['var1' => $request->total, 'var2' => $request->payment_method, 'var3' => $request->discount,'var4' => $a->quantity]);
+                // return   $e->getMessage() ;
             }
             
     }
