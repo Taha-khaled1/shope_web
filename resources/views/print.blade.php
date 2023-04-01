@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Invoice</title>
+    <title>فاتوره</title>
     <style>
         /* Add styles for the invoice here */
         body {
@@ -170,7 +170,7 @@
         </table>
         <div class="payment-method">
             <h2>طريقة الدفع او السداد</h2>
-            <p>Credit Card</p>
+            <p>التحويل للحساب البنكي</p>
         </div>
         <div class="bank-details">
             <h2>معلومات الحساب المصرفي
